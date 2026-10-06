@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-benfic-blue: #0452DA;
+  --color-moviespace-red: #E50914;
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-serif: var(--font-playfair), Georgia, serif;
+}
+
+@layer base {
+  :root {
+    /* A premium, icy blue-tinted background to completely eliminate the paper look */
+    --background: #e3ecf5; 
+    --surface: #ffffff; /* Cards stay pure white to create a floating depth effect */
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+  }
+  
+  .dark {
+    --background: #0a0f1c;
+    --surface: #111827;
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+  }
+}
+
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  }
+
+  ::selection {
+    background-color: rgba(4, 82, 218, 0.3); 
+    color: #0452DA; 
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--surface);
+  border-radius: 6px;
+  border: 1px solid #d1d5db; 
+}
+.dark ::-webkit-scrollbar-thumb {
+  border-color: #1f2937; 
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #d1d5db; 
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: #374151; 
+}
+
+/* Hide scrollbar for the mobile navbar while keeping swipe functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
