@@ -55,8 +55,8 @@ export function Experience() {
 
             <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 mb-4">
               <div>
-                <h3 className="text-xl font-bold text-text-primary group-hover:text-benfic-blue transition-colors">
-                  {exp.role}
+                <h3 className="text-xl font-bold text-text-primary group-hover:text-blue-500 dark:group-hover:text-benfic-blue transition-colors">
+                {exp.role}
                 </h3>
                 <span className="text-lg font-serif italic text-text-secondary">
                   @ {exp.company}

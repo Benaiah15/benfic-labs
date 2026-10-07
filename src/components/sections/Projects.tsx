@@ -31,13 +31,14 @@ const projects = [
     liveUrl: "#",
     githubUrl: "https://github.com/Benaiah15/movie-review-site",
   },
-  {
+{
     title: "Trackizer",
     type: "Mobile Application",
     description: "A pixel-perfect frontend replica of a subscription tracking mobile app, built with fluid animations and a custom stylesheet architecture.",
     tech: ["React Native", "Expo", "TypeScript"],
-    accent: "group-hover:border-benfic-blue/50",
-    glow: "bg-benfic-blue/10",
+    // Updated to use blue-400 in light mode
+    accent: "group-hover:border-blue-400 dark:group-hover:border-benfic-blue/50",
+    glow: "bg-blue-400/10 dark:bg-benfic-blue/10",
     liveUrl: "#",
     githubUrl: "https://github.com/Benaiah15/trackizer-app",
   },
@@ -126,14 +127,18 @@ export function Projects() {
                 {project.description}
               </p>
               
-              {/* Tech Stack Tags */}
-              <div className="flex flex-wrap gap-2 mb-8">
-                {project.tech.map((tech) => (
-                  <span key={tech} className="px-3 py-1 text-xs font-medium bg-background border border-gray-200 dark:border-gray-800 rounded-lg text-text-secondary">
-                    {tech}
-                  </span>
-                ))}
-              </div>
+            {/* Inside the Project Card render loop, update the tech stack pill mapping: */}
+            <div className="flex flex-wrap gap-2 mb-8">
+            {project.tech.map((t) => (
+                <span 
+                key={t} 
+                // Added group-hover border changes to make the pills pop alongside the card
+                className="px-3 py-1 text-xs font-medium bg-background border border-gray-200 dark:border-gray-800 rounded-lg text-text-secondary group-hover:border-blue-300 dark:group-hover:border-gray-600 transition-colors"
+                >
+                {t}
+                </span>
+            ))}
+            </div>
               
               {/* Action Links */}
               <div className="flex items-center gap-4 pt-4 border-t border-gray-200 dark:border-gray-800">

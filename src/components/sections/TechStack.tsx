@@ -8,30 +8,30 @@ const techCategories = [
     skills: [
       { name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript/3178C6" },
       { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
-      { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/black", invertDark: true },
+      { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs", invertDark: true },
       { name: "React Native", icon: "https://cdn.simpleicons.org/react/61DAFB" },
-      { name: "Expo", icon: "https://cdn.simpleicons.org/expo/black", invertDark: true },
+      { name: "Expo", icon: "https://cdn.simpleicons.org/expo", invertDark: true },
       { name: "Tailwind CSS", icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
-      { name: "Framer Motion", icon: "https://cdn.simpleicons.org/framer/black", invertDark: true },
+      { name: "Framer Motion", icon: "https://cdn.simpleicons.org/framer", invertDark: true },
     ],
   },
   {
     title: "Backend & Database",
     skills: [
       { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs/339933" },
-      { name: "Express", icon: "https://cdn.simpleicons.org/express/black", invertDark: true },
+      { name: "Express", icon: "https://cdn.simpleicons.org/express", invertDark: true },
       { name: "PostgreSQL", icon: "https://cdn.simpleicons.org/postgresql/4169E1" },
       { name: "MongoDB", icon: "https://cdn.simpleicons.org/mongodb/47A248" },
-      { name: "Prisma", icon: "https://cdn.simpleicons.org/prisma/2D3748", invertDark: true },
+      { name: "Prisma", icon: "https://cdn.simpleicons.org/prisma", invertDark: true },
       { name: "Supabase", icon: "https://cdn.simpleicons.org/supabase/3ECF8E" },
     ],
   },
-{
+  {
     title: "Tools & Design",
     skills: [
       { name: "Git", icon: "https://cdn.simpleicons.org/git/F05032" },
-      { name: "GitHub", icon: "https://cdn.simpleicons.org/github/black", invertDark: true },
-      { name: "Vercel", icon: "https://cdn.simpleicons.org/vercel/black", invertDark: true },
+      { name: "GitHub", icon: "https://cdn.simpleicons.org/github", invertDark: true },
+      { name: "Vercel", icon: "https://cdn.simpleicons.org/vercel", invertDark: true },
       { name: "VS Code", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" },
       { name: "Photoshop", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" },
       { name: "Figma", icon: "https://cdn.simpleicons.org/figma/F24E1E" },
@@ -69,12 +69,12 @@ export function TechStack() {
               {category.title}
             </h3>
             
-            {/* The Logo Grid */}
             <div className="flex flex-wrap gap-4">
               {category.skills.map((skill) => (
                 <div 
                   key={skill.name} 
-                  className="group flex items-center gap-3 px-4 py-3 bg-surface border border-gray-200 dark:border-gray-800 rounded-xl hover:border-benfic-blue/30 hover:shadow-md transition-all cursor-default"
+                  // Notice the light mode border is now a soft blue-400, and dark mode stays benfic-blue
+                  className="group flex items-center gap-3 px-4 py-3 bg-surface border border-gray-200 dark:border-gray-800 rounded-xl hover:border-blue-400 dark:hover:border-benfic-blue/40 hover:shadow-md transition-all cursor-default"
                 >
                   <img 
                     src={skill.icon} 
